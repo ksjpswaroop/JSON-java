@@ -626,7 +626,7 @@ public class JSONML {
      * @return An XML string.
      * @throws JSONException Thrown on error converting to a string
      */
-    public static String toString(JSONObject jo) throws JSONException {
+        public static String toString(JSONObject jo) throws JSONException {
         StringBuilder sb = new StringBuilder();
         int                 i;
         JSONArray           ja;
@@ -658,7 +658,7 @@ public class JSONML {
                     sb.append(XML.escape(key));
                     sb.append('=');
                     sb.append('"');
-                    sb.append(XML.escape(value.toString()));
+                    sb.append(XML.escape(value.toString()).replace("\n", "&#10;"));
                     sb.append('"');
                 }
             }
